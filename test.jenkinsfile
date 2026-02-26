@@ -1,8 +1,13 @@
 pipeline {
     agent any
+
+    parameters{
+        booleanParam(defaultValue:false, description: "Are you human?" name:"human")
     stages {
         stage('Build') {
             steps {
+                echo $BUILD_NUMBER
+                echo "Iam human :${params.human}"
                 sh 'mvn -B -DskipTests clean package'
             }
         }
