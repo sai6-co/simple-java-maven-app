@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     parameters{
-        booleanParam(defaultValue:false, description: "Are you human?" name:"human")
+        booleanParam(defaultValue:false, description: "Are you human?", name:"human")
         }
     stages {
         stage('Build') {
