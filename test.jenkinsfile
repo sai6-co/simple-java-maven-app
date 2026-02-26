@@ -10,6 +10,7 @@ pipeline {
                 echo "${BUILD_NUMBER}"
                 echo "Iam human :${params.human}"
                 sh 'mvn -B -DskipTests clean package'
+                sleep(50)
             }
         }
         stage('Test') {
@@ -25,11 +26,13 @@ pipeline {
         stage('Deliver') {
             steps {
                 sh './jenkins/scripts/deliver.sh'
+                sleep(25)
             }
         }
         stage('Complete') {
             steps {
                 echo 'Job Complete!'
+                sleep(50)
             }
         }
     }
