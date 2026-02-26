@@ -3,6 +3,7 @@ pipeline {
 
     parameters{
         booleanParam(defaultValue:false, description: "Are you human?" name:"human")
+        }
     stages {
         stage('Build') {
             steps {
